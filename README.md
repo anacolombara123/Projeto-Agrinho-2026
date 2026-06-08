@@ -1,7 +1,3 @@
-Aqui está um resumo de todas as funcionalidades integradas ao projeto **Agrinho 2026 - AgroTech Sustentável**, detalhando o que cada parte faz e como elas interagem para criar uma experiência dinâmica e acessível:
-
----
-
 ### 1. Menu Responsivo (Mobile e Desktop)
 
 * **Como funciona:** O menu adapta-se automaticamente ao tamanho da tela do usuário. Em computadores, ele exibe os links de navegação alinhados horizontalmente. Em celulares ou tablets, os links são ocultados e substituídos por um botão de menu estilo "hambúrguer" (三).
