@@ -1,0 +1,322 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS (ROOT)
+   ========================================== */
+:root {
+    --cor-principal: #1b5e20;     /* Verde Campo Escuro */
+    --cor-secundaria: #00b0ff;    /* Azul Tecnológico */
+    --cor-fundo: #f4f7f5;         /* Cinza claro levemente esverdeado */
+    --cor-card-bg: #ffffff;       /* Fundo Branco para os cards */
+    --cor-texto: #2d3748;         /* Cinza Escuro para leitura confortável */
+    --cor-botao: #2e7d32;         /* Verde Botão */
+    --cor-botao-hover: #1b5e20;   /* Verde Escuro para Efeito Hover */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transicao: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Efeito de Scroll Suave */
+}
+
+body {
+    font-family: var(--font-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   CABEÇALHO E MENU RESPONSIVO
+   ========================================== */
+.header {
+    background-color: var(--cor-card-bg);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    color: var(--cor-principal);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--cor-secundaria);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 600;
+    transition: var(--transicao);
+}
+
+.nav a:hover {
+    color: var(--cor-secundaria);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--cor-principal);
+    cursor: pointer;
+}
+
+/* ==========================================
+   BANNER PRINCIPAL
+   ========================================== */
+.banner {
+    background: linear-gradient(135deg, rgba(27, 94, 32, 0.85), rgba(0, 176, 255, 0.7)), 
+                url('https://picsum.photos/1920/1080?blur=2') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    margin-bottom: 40px;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+/* Componente de Botão Comum */
+.btn {
+    display: inline-block;
+    background-color: var(--cor-botao);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: var(--sombra);
+}
+
+.btn:hover {
+    background-color: var(--cor-botao-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   LAYOUT EM GRIDS E SEÇÕES
+   ========================================== */
+.section {
+    padding: 40px 20px;
+    background: var(--cor-card-bg);
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: var(--sombra);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--cor-principal);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--cor-secundaria);
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+.card-intro {
+    border-left: 6px solid var(--cor-secundaria);
+}
+
+/* Configurações de Grids Responsivos */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+/* Estilização dos Cards e Itens */
+.card, .tech-item, .impact-box {
+    background-color: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 8px;
+    transition: var(--transicao);
+}
+
+.card:hover, .tech-item:hover {
+    transform: translateY(-5px);
+    border-top: 4px solid var(--cor-principal);
+    box-shadow: var(--sombra);
+}
+
+.card h3, .tech-item h3 {
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+.impact-box {
+    border-bottom: 4px solid var(--cor-secundaria);
+    text-align: center;
+}
+
+.impact-box h4 {
+    color: var(--cor-principal);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.conclusao {
+    background: linear-gradient(135deg, var(--cor-principal), #0f3d13);
+    color: white;
+    text-align: center;
+}
+
+/* ==========================================
+   SISTEMA DO QUIZ INTERATIVO
+   ========================================== */
+.quiz-container {
+    text-align: center;
+    border: 2px solid var(--cor-secundaria);
+}
+
+.quiz-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--cor-fundo);
+    border-radius: 8px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.option-btn {
+    background-color: white;
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+    transition: var(--transicao);
+}
+
+.option-btn:hover {
+    border-color: var(--cor-secundaria);
+    background-color: rgba(0, 176, 255, 0.05);
+}
+
+.correct {
+    background-color: #c8e6c9 !important;
+    border-color: #4caf50 !important;
+    color: #256029;
+}
+
+.wrong {
+    background-color: #ffcdd2 !important;
+    border-color: #f44336 !important;
+    color: #c62828;
+}
+
+.hide {
+    display: none;
+}
+
+/* ==========================================
+   RODAPÉ (FOOTER)
+   ========================================== */
+.footer {
+    background-color: var(--cor-principal);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   ========================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Exibe botão hamburguer */
+    }
+
+    .nav {
+        display: none; /* Oculta menu no mobile por padrão */
+        width: 100%;
+    }
+
+    .nav.active {
+        display: block; /* Abre o menu quando clicado */
+    }
+
+    .header-container {
+        flex-wrap: wrap;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 15px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+}
